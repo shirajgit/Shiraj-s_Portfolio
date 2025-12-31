@@ -1,0 +1,57 @@
+// src/data/projects.js
+export const projects = [
+  {
+    title: "AI Resume Analyzer",
+    description:
+      "A web application that analyzes resumes using AI to provide insights and feedback for better job applications.",
+    tech: ["HTML", "CSS", "JavaScript", "AI API"],
+    github: "https://github.com/shirajgit/ai-resume-analyzer.git",
+    live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
+    img:"/ai-analyzer.png",
+  },
+  {
+    title: "Meatzy",
+    description:
+      "A modern chicken delivery website UI with responsive design, smooth animations, and a clean layout for seamless user experience.",
+    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/meatzy.git",
+    live: "https://meatzy.vercel.app",
+    img:"/Meatzy.png",
+  },
+  {
+    title: "Shiraj's Drive",
+    description:
+      "A personal file management system built with React and MongoDB, allowing users to upload, manage, and organize files with a modern UI.",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Supabase", "EJS"],
+    github: "https://github.com/shirajgit/Drive.git",
+    live: "https://shiraj-drive.onrender.com",
+    img:"/Drive.png",
+  },
+  {
+    title: "Dture",
+    description:
+      "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/Dture.git",
+    live: "https://dture.netlify.app",
+    img:"/Dture.png",
+  },
+  {
+    title: "Portfolio",
+    description:
+      "A personal portfolio website showcasing projects, skills, and experience with a clean and modern design.",
+    tech: ["React", "Next.js", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/portfolio.git",
+    live: "https://dture.netlify.app",
+    img:"/port.png",
+  },
+  {
+    title: "Storeit",
+    description:
+      "An e-commerce landing page with modern UI and responsive design, optimized for smooth user interactions and product showcase.",
+    tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/Storeit.git",
+    live: "https://dture.netlify.app",
+    img:"/storeit.png",
+  },
+];
