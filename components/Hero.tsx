@@ -29,12 +29,13 @@ export default function Hero() {
         🚀 View Projects
       </a>
 
-      <a
-        href="/resume.pdf"
-        className="border border-gray-700 px-8 py-3 rounded-xl hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300"
-      >
-        📄 Download Resume
-      </a>
+   <a
+  href="/resume.pdf"
+  download="Shiraj_Mujawar_Resume.pdf" // <-- file will be saved with this name
+  className="border border-gray-700 px-8 py-3 rounded-xl hover:border-yellow-400 hover:text-yellow-400 transition-all duration-300"
+>
+  📄 Download Resume
+</a>
     </div>
 
     {/* Scroll Hint */}

@@ -4,7 +4,7 @@ export const projects = [
     title: "AI Resume Analyzer",
     description:
       "A web application that analyzes resumes using AI to provide insights and feedback for better job applications.",
-    tech: ["HTML", "CSS", "JavaScript", "AI API"],
+    tech: ["Reactjs", "PuterJs", "Srevless", "AI API","TailwindCss"],
     github: "https://github.com/shirajgit/ai-resume-analyzer.git",
     live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
     img:"/ai-analyzer.png",
@@ -31,7 +31,7 @@ export const projects = [
     title: "Dture",
     description:
       "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",
-    tech: ["HTML", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    tech: ["HTML", "Tailwind CSS", "React", "Responsive Design"],
     github: "https://github.com/shirajgit/Dture.git",
     live: "https://dture.netlify.app",
     img:"/Dture.png",
@@ -46,12 +46,12 @@ export const projects = [
     img:"/port.png",
   },
   {
-    title: "Storeit",
+    title: "Al CodeReviewer",
     description:
       "An e-commerce landing page with modern UI and responsive design, optimized for smooth user interactions and product showcase.",
-    tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Responsive Design"],
-    github: "https://github.com/shirajgit/Storeit.git",
-    live: "https://dture.netlify.app",
-    img:"/storeit.png",
+    tech: ["NEXTjs", "Express", "Tailwind CSS", "JavaScript", "mongoDB"],
+    github: "https://github.com/shirajgit/Code-Reviewer.git",
+    live: "https://coderiviewer.vercel.app/",
+    img:"/code.png",
   },
 ];

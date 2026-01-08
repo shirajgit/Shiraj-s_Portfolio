@@ -15,7 +15,7 @@ export default function Footer() {
     {/* Social Links */}
     <div className="flex justify-center gap-8 mb-8 text-sm font-medium">
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/shirajgit"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-yellow-400 transition-all"
@@ -24,7 +24,7 @@ export default function Footer() {
       </a>
 
       <a
-        href="https://linkedin.com/in/yourusername"
+        href="https://www.linkedin.com/in/shiraj-mujawar"
         target="_blank"
         rel="noopener noreferrer"
         className="hover:text-yellow-400 transition-all"
