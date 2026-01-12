@@ -42,7 +42,7 @@ export default function Contact() {
 
         {/* LinkedIn */}
         <a
-          href="https://linkedin.com/in/shirajmujawar"
+          href="https://www.linkedin.com/in/shiraj-mujawar"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-3 border border-gray-700 
