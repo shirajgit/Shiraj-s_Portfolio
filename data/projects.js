@@ -42,7 +42,7 @@ export const projects = [
       "A personal portfolio website showcasing projects, skills, and experience with a clean and modern design.",
     tech: ["React", "Next.js", "Tailwind CSS", "JavaScript", "Responsive Design"],
     github: "https://github.com/shirajgit/portfolio.git",
-    live: "https://dture.netlify.app",
+    live: "https://shiraj-portfolio.vercel.app",
     img:"/port.png",
   },
   {
