@@ -33,7 +33,7 @@ export const projects = [
       "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",
     tech: ["HTML", "Tailwind CSS", "React", "Responsive Design"],
     github: "https://github.com/shirajgit/Dture.git",
-    live: "https://dture.netlify.app",
+    live: "https://dtrue.vercel.app",
     img:"/Dture.png",
   },
   {
