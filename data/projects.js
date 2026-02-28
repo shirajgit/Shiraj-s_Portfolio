@@ -37,13 +37,13 @@ export const projects = [
     img:"/Dture.png",
   },
   {
-    title: "Portfolio",
+    title: "clickonadzz",
     description:
-      "A personal portfolio website showcasing projects, skills, and experience with a clean and modern design.",
-    tech: ["React", "Next.js", "Tailwind CSS", "JavaScript", "Responsive Design"],
-    github: "https://github.com/shirajgit/portfolio.git",
-    live: "https://shiraj-portfolio.vercel.app",
-    img:"/port.png",
+      "We build data-driven digital marketing strategies that deliver transformational growth and exceptional results — designed to lower your acquisition costs.",
+    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/clickOnAdds.git",
+    live: "https://clickonadzz.com",
+    img:"/clickonadzz.png",
   },
   {
     title: "Al CodeReviewer",
