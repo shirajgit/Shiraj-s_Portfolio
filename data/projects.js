@@ -9,15 +9,16 @@ export const projects = [
     live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
     img:"/ai-analyzer.png",
   },
-  {
-    title: "Meatzy",
+    {
+    title: "Dture",
     description:
-      "A modern chicken delivery website UI with responsive design, smooth animations, and a clean layout for seamless user experience.",
-    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
-    github: "https://github.com/shirajgit/meatzy.git",
-    live: "https://meatzy.vercel.app",
-    img:"/Meatzy.png",
+      "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",
+    tech: ["HTML", "Tailwind CSS", "React", "Responsive Design"],
+    github: "https://github.com/shirajgit/Dture.git",
+    live: "https://dtrue.vercel.app",
+    img:"/Dture.png",
   },
+ 
   {
     title: "Shiraj's Drive",
     description:
@@ -26,15 +27,6 @@ export const projects = [
     github: "https://github.com/shirajgit/Drive.git",
     live: "https://shiraj-drive.onrender.com",
     img:"/Drive.png",
-  },
-  {
-    title: "Dture",
-    description:
-      "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",
-    tech: ["HTML", "Tailwind CSS", "React", "Responsive Design"],
-    github: "https://github.com/shirajgit/Dture.git",
-    live: "https://dtrue.vercel.app",
-    img:"/Dture.png",
   },
   {
     title: "clickonadzz",
@@ -53,5 +45,13 @@ export const projects = [
     github: "https://github.com/shirajgit/Code-Reviewer.git",
     live: "https://coderiviewer.vercel.app/",
     img:"/code.png",
+  }, {
+    title: "Meatzy",
+    description:
+      "A modern chicken delivery website UI with responsive design, smooth animations, and a clean layout for seamless user experience.",
+    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
+    github: "https://github.com/shirajgit/meatzy.git",
+    live: "https://meatzy.vercel.app",
+    img:"/Meatzy.png",
   },
 ];
