@@ -34,6 +34,14 @@ export const CLIENTS = [
     highlights: ["Modern homepage", "Service sections", "Lead-friendly CTA"],
   },
   {
+    name: "Clickonadzz",
+    type: "Marketing Website",
+    desc: " Digital marketing agency website with clean design and service showcase.",
+    link: "https://clickonadzz.com",
+    stack: ["Next.js", "Tailwind","Framer Motion", "Forms"],
+    highlights: ["Responsive", "Fast UI", "Professional design"],
+  },
+   {
     name: "Nehra Cars",
     type: "Car Rental Website",
     desc: "Self-drive car rental website with clean layout and enquiry flow.",
@@ -41,6 +49,15 @@ export const CLIENTS = [
     stack: ["Next.js", "Tailwind", "Forms"],
     highlights: ["Responsive", "Fast UI", "Professional design"],
   },
+   {
+    name: "VizionExl",
+    type: "it Services Website",
+    desc: "IT services company website with modern UI and service showcase.",
+    link: "https://vizionexl.vercel.app",
+    stack: ["Next.js", "Tailwind", "Forms"],
+    highlights: ["Responsive", "Fast UI", "Professional design"],
+  },
+
 ];
 
 export const SERVICES = [
