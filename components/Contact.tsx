@@ -26,6 +26,13 @@ export default function Contact() {
       icon: "✉️",
       primary: true,
     },
+      {
+      label: "WhatsApp Me",
+      sub: "+91 81053 69922",
+      href: "https://wa.me/918105369922",
+      icon: "💬",
+ 
+    },
     {
       label: "Call Me",
       sub: "+91 81053 69922",
