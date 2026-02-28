@@ -20,13 +20,13 @@ export default function Home() {
       <Navbar />
        <Hero /> 
       <About />
-        <Stats stats={STATS} />
+      <Stats stats={STATS} />
       <Services services={SERVICES} />
       <Clients clients={CLIENTS} />
       <Company company={COMPANY} />
       <Skills />
       <Projects />
-    <Experience />
+      <Experience />
       <Contact /> 
       <Footer /> 
     </>

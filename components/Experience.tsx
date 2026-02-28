@@ -17,6 +17,20 @@ const experiences = [
       "Handled client communication, requirement gathering, and pricing strategy.",
     ],
   },
+
+  {
+    role: "Freelance Full-Stack Developer",
+    company: "Self-Employed",
+    duration: "2024 – Present",
+    points: [
+      "Delivered custom web applications and landing pages for clients.",
+      "Built scalable MERN stack solutions tailored to business requirements.",
+      "Handled end-to-end development from concept to deployment.",
+      "Implemented authentication systems and optimized performance.",
+      "Managed client communication, revisions, and production delivery.",
+    ],
+  },
+
   {
     role: "Founding Engineer",
     company: "Dtrue",
@@ -29,8 +43,9 @@ const experiences = [
       "Contributed to technical decisions and system design planning.",
     ],
   },
+
   {
-    role: "Full-Stack Developer Intern",
+    role: "Full-Stack Developer ",
     company: "OneRoot, Bengaluru",
     duration: "6 Months Internship",
     points: [
@@ -41,6 +56,7 @@ const experiences = [
       "Collaborated using Git & GitHub for version control and reviews.",
     ],
   },
+
   {
     role: "Hardware Designer Intern",
     company: "Sadom, Bengaluru",
