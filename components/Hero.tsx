@@ -37,18 +37,27 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
           className="mt-10 flex justify-center"
         >
-          <div className="relative w-36 h-36 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
-            {/* subtle glow ring */}
-            <div className="absolute inset-0 rounded-full ring-4 ring-yellow-400/20 animate-pulse" />
-            <Image
-              src="/profile.jpeg"
-              alt="Shiraj Mujawar"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 768px) 144px, 208px"
-            />
-          </div>
+        <div className="relative w-36 h-36 md:w-52 md:h-52">
+  {/* Outer Glow */}
+  <div className="absolute inset-0 rounded-full bg-yellow-400 blur-2xl opacity-30 animate-pulse" />
+
+  {/* Rotating Gradient Ring */}
+  <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-r from-yellow-400 via-purple-500 to-yellow-400 animate-spin-slow">
+    <div className="w-full h-full rounded-full bg-black" />
+  </div>
+
+  {/* Image */}
+  <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10">
+    <Image
+      src="/profile.jpeg"
+      alt="Shiraj Mujawar"
+      fill
+      priority
+      className="object-cover rounded-full"
+      sizes="(max-width: 768px) 144px, 208px"
+    />  
+  </div>
+</div>
         </motion.div>
 
         {/* Title */}

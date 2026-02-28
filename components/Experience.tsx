@@ -16,8 +16,30 @@ const experiences = [
       "Focused on clean UI/UX, performance optimization, and conversion-oriented layouts.",
       "Handled client communication, requirement gathering, and pricing strategy.",
     ],
+  },{
+    role: "Full-Stack Developer ",
+    company: "OneRoot, Bengaluru",
+    duration: "6 Months Internship",
+    points: [
+      "Developed full-stack applications using React, Node, Express, MongoDB.",
+      "Built secure REST APIs with authentication and role-based access control.",
+      "Integrated frontend UI with backend services.",
+      "Optimized API performance and improved response times.",
+      "Collaborated using Git & GitHub for version control and reviews.",
+    ],
   },
-
+ {
+    role: "Founding Engineer",
+    company: "Dtrue",
+    duration: "2025",
+    points: [
+      "Built core frontend and backend architecture from scratch.",
+      "Designed scalable REST APIs and integrated authentication systems.",
+      "Worked closely with stakeholders to define product roadmap.",
+      "Implemented production-ready deployment workflows.",
+      "Contributed to technical decisions and system design planning.",
+    ],
+  },
   {
     role: "Freelance Full-Stack Developer",
     company: "Self-Employed",
@@ -31,31 +53,9 @@ const experiences = [
     ],
   },
 
-  {
-    role: "Founding Engineer",
-    company: "Dtrue",
-    duration: "2025",
-    points: [
-      "Built core frontend and backend architecture from scratch.",
-      "Designed scalable REST APIs and integrated authentication systems.",
-      "Worked closely with stakeholders to define product roadmap.",
-      "Implemented production-ready deployment workflows.",
-      "Contributed to technical decisions and system design planning.",
-    ],
-  },
+ 
 
-  {
-    role: "Full-Stack Developer ",
-    company: "OneRoot, Bengaluru",
-    duration: "6 Months Internship",
-    points: [
-      "Developed full-stack applications using React, Node, Express, MongoDB.",
-      "Built secure REST APIs with authentication and role-based access control.",
-      "Integrated frontend UI with backend services.",
-      "Optimized API performance and improved response times.",
-      "Collaborated using Git & GitHub for version control and reviews.",
-    ],
-  },
+  
 
   {
     role: "Hardware Designer Intern",
