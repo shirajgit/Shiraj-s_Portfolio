@@ -158,17 +158,4 @@ export default function Projects() {
   );
 }
 
-// src/data/projects.ts
-export interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  github: string;
-  live: string;
-  img: string;
-  // add tag here – make it optional if not every entry has one
-  tag?: string;
-  caseStudy?: string;
-}
-
  
