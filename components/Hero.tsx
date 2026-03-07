@@ -50,7 +50,7 @@ export default function Hero() {
   <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10">
     <Image
       src="/profile.jpeg"
-      alt="Shiraj Mujawar"
+      alt="Shiraj Mujawar MERN Stack Developer"
       fill
       priority
       className="object-cover rounded-full"
