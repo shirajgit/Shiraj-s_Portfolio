@@ -1,6 +1,5 @@
 "use client";
 
-// src/components/Navbar.jsx
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -15,11 +14,9 @@ export default function Navbar() {
     { href: "#contact", label: "Contact", id: "contact" },
   ];
 
-  // Detect active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       const sections = links.map((l) => document.getElementById(l.id));
-
       const scrollY = window.scrollY + 120;
 
       sections.forEach((section) => {
@@ -39,7 +36,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
@@ -48,7 +44,6 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Prevent background scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -58,7 +53,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-md text-white">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 relative z-50">
         {/* Logo */}
         <a
           href="#top"
@@ -75,14 +70,10 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               className={`relative transition-colors duration-200 ${
-                active === l.id
-                  ? "text-yellow-400"
-                  : "hover:text-yellow-400"
+                active === l.id ? "text-yellow-400" : "hover:text-yellow-400"
               }`}
             >
               {l.label}
-
-              {/* Active underline */}
               <span
                 className={`absolute -bottom-2 left-0 h-[2px] bg-yellow-400 transition-all duration-300 ${
                   active === l.id ? "w-full" : "w-0"
@@ -126,7 +117,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       <div
-        className={`md:hidden transition-all duration-300 ease-out ${
+        className={`md:hidden relative z-50 transition-all duration-300 ease-out ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         } overflow-hidden bg-black/85 backdrop-blur-md border-t border-white/10`}
       >
@@ -150,10 +141,8 @@ export default function Navbar() {
 
       {/* Overlay */}
       {open && (
-        <button
-          type="button"
-          aria-label="Close menu overlay"
-          className="md:hidden fixed inset-0 top-[72px] bg-black/40"
+        <div
+          className="md:hidden fixed inset-0 top-[72px] bg-black/40 z-40"
           onClick={() => setOpen(false)}
         />
       )}
