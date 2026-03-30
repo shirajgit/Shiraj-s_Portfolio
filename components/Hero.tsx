@@ -3,18 +3,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaDownload } from "react-icons/fa";
-import ParticlesCanvas from "./ParticlesCanvas";
-
-
-
-
-
+  
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
     
-     <ParticlesCanvas />
+   
       {/* 🌌 Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-black" />
 
@@ -32,7 +27,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full 
-          backdrop-blur-md bg-white/5 mt-20 border border-white/10 text-sm text-gray-300 shadow-lg"
+          backdrop-blur-md bg-white/5 mt-21 border border-white/10 text-sm text-gray-300 shadow-lg"
         >
           <span className="w-2 h-2  bg-yellow-400 rounded-full animate-pulse" />
           Product mindset • MERN • Next.js • App Dev
