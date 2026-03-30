@@ -1,14 +1,5 @@
 // src/data/projects.js
 export const projects = [
-  {
-    title: "AI Resume Analyzer",
-    description:
-      "A web application that analyzes resumes using AI to provide insights and feedback for better job applications.",
-    tech: ["Reactjs", "PuterJs", "Srevless", "AI API","TailwindCss"],
-    github: "https://github.com/shirajgit/ai-resume-analyzer.git",
-    live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
-    img:"/ai-analyzer.png",
-  },
     {
     title: "Dture",
     description:
@@ -18,7 +9,15 @@ export const projects = [
     live: "https://dtrue.vercel.app",
     img:"/Dture.png",
   },
- 
+  {
+    title: "ChatMath",
+    description:
+      "ChatMath — Smart Chat + Math Assistant A full-stack real-time chat application with an integrated SymPy-powered math solver.",
+    tech: ["FastAPI ", "WebSockets", " MongoDB", "React","TailwindCss"],
+    github: "https://github.com/shirajgit/chatmath.git",
+    live: "https://chatcal-lac.vercel.app/",
+    img:"/chatmath.png",
+  },
   {
     title: "Shiraj's Drive",
     description:
@@ -28,6 +27,18 @@ export const projects = [
     live: "https://shiraj-drive.onrender.com",
     img:"/Drive.png",
   },
+  {
+    title: "AI Resume Analyzer",
+    description:
+      "A web application that analyzes resumes using AI to provide insights and feedback for better job applications.",
+    tech: ["Reactjs", "PuterJs", "Srevless", "AI API","TailwindCss"],
+    github: "https://github.com/shirajgit/ai-resume-analyzer.git",
+    live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
+    img:"/ai-analyzer.png",
+  },
+  
+ 
+  
   {
     title: "clickonadzz",
     description:
@@ -45,15 +56,7 @@ export const projects = [
     github: "https://github.com/shirajgit/Code-Reviewer.git",
     live: "https://coderiviewer.vercel.app/",
     img:"/code.png",
-  }, {
-    title: "Meatzy",
-    description:
-      "A modern chicken delivery website UI with responsive design, smooth animations, and a clean layout for seamless user experience.",
-    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
-    github: "https://github.com/shirajgit/meatzy.git",
-    live: "https://meatzy.vercel.app",
-    img:"/Meatzy.png",
-  },
+  } 
 ];
 
 

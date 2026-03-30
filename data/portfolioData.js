@@ -50,12 +50,12 @@ export const CLIENTS = [
     highlights: ["Responsive", "Fast UI", "Professional design"],
   },
    {
-    name: "VizionExl",
-    type: "it Services Website",
-    desc: "IT services company website with modern UI and service showcase.",
-    link: "https://vizionexl.vercel.app",
-    stack: ["Next.js", "Tailwind", "Forms"],
-    highlights: ["Responsive", "Fast UI", "Professional design"],
+    name: "Portfolio (client project)",
+    type: "Portfolio Website",
+    desc: " Personal portfolio website showcasing skills, projects, and contact info with a clean design.",
+    link: "https://protfolio-sophia.vercel.app/",
+    stack: ["three.js", "Tailwind CSS", "framer-motion"],
+    highlights: ["Modern Design", "mobile-friendly", "Professional design"],
   },
 
 ];
