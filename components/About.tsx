@@ -98,19 +98,7 @@ export default function About() {
                 performance — focusing on clean, maintainable code and
                 user-focused solutions.
               </p>
-
-              {/* Added: more about you */}
-              <p className="mt-4 text-lg leading-relaxed text-gray-300">
-                I enjoy taking ideas from{" "}
-                <span className="text-gray-100 font-semibold">
-                  design → development → deployment
-                </span>{" "}
-                and turning them into real products. I care about{" "}
-                <span className="text-gray-100 font-semibold">
-                  clean UI/UX
-                </span>
-                , smooth user flows, and code that’s easy to scale.
-              </p>
+ 
 
               <p className="mt-4 text-lg leading-relaxed text-gray-300">
                 Along with web development, I have a strong background in{" "}
@@ -121,14 +109,7 @@ export default function About() {
                 real-world constraints.
               </p>
 
-              <p className="mt-4 text-lg leading-relaxed text-gray-300">
-                Currently, I’m sharpening my skills in{" "}
-                <span className="text-gray-100 font-semibold">
-                  Next.js, backend architecture, DevOps basics
-                </span>{" "}
-                and building projects that feel like products — not just
-                assignments.
-              </p>
+               
             </motion.div>
 
             {/* Added: strengths row */}
@@ -157,7 +138,7 @@ export default function About() {
             <motion.div variants={{item}} className="flex flex-wrap gap-3 pt-2">
               {[
                 "MERN Stack",
-                "Full-Stack Development",
+                "Full-Stack Dev ",
                 "Next.js",
                 "DevOps Basics",
                 "Embedded / IoT",
@@ -253,6 +234,11 @@ export default function About() {
                 <p className="text-sm text-gray-300 leading-relaxed">
                   I build fast, modern web apps with a product mindset — clean
                   UI, scalable backend, and deployment-ready workflows.
+                    Along with web development, I have a strong background in{" "}
+                  <span className="text-yellow-300 font-semibold">
+                    Embedded Systems & IoT
+                  </span>
+                  , which helps me think in systems — performance, reliability, and real-world constraints. 
                 </p>
               </div>
 
