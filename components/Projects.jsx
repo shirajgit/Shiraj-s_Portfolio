@@ -6,82 +6,88 @@ import { FaGithub, FaArrowRight } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const container = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: {},
   show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
 const card = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 30, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-24 bg-black text-gray-200 overflow-hidden"
+      className="relative py-28 bg-black text-gray-200 overflow-hidden"
     >
       {/* 🌌 Background */}
-      <div className="absolute -top-32 left-1/4 w-[400px] h-[400px] bg-yellow-400/10 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-purple-500/10 blur-3xl rounded-full" />
+      <div className="absolute -top-40 left-1/3 w-[500px] h-[500px] bg-yellow-400/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-purple-500/10 blur-3xl rounded-full" />
+
+      {/* Grid texture */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Header */}
+        
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
-            Case studies
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+            Portfolio
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              My Projects
+
+          <h2 className="text-4xl md:text-6xl font-extrabold mt-4">
+            <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent">
+              Featured Projects
             </span>
           </h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Real-world builds focused on performance, scalability, and clean UX.
+
+          <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
+            Production-ready builds with clean UI, strong backend, and real impact.
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* GRID */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-10"
+          className="grid md:grid-cols-2 gap-12"
         >
           {projects.map((project, index) => (
             <motion.article
               key={project.title ?? index}
               variants={card}
-              whileHover={{ y: -8 }}
-              className="group relative rounded-2xl border border-white/10 
-              bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-2xl 
-              hover:border-yellow-400/40 transition"
+              whileHover={{ y: -10 }}
+              className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl"
             >
-              {/* Image */}
+              {/* IMAGE */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-64 md:h-80 object-cover 
-                  group-hover:scale-110 transition duration-700"
+                  className="w-full h-72 md:h-96 object-cover 
+                  transition duration-700 ease-out 
+                  group-hover:scale-110 group-hover:rotate-[1deg]"
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                {/* GRADIENT OVERLAY */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-                {/* Hover Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition">
-                  <h3 className="text-2xl font-bold text-yellow-300">
+                {/* FLOATING TITLE */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-yellow-300 transition">
                     {project.title}
                   </h3>
 
@@ -90,7 +96,8 @@ export default function Projects() {
                       <span
                         key={i}
                         className="text-xs px-3 py-1 rounded-full 
-                        bg-yellow-400/10 text-yellow-300 border border-yellow-400/20"
+                        bg-white/10 text-gray-200 backdrop-blur border border-white/10
+                        group-hover:border-yellow-400/40 group-hover:text-yellow-200 transition"
                       >
                         {tech}
                       </span>
@@ -98,21 +105,22 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Tag */}
+                {/* TAG */}
                 {project.tag && (
-                  <div className="absolute top-4 left-4 text-xs px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/10">
+                  <div className="absolute top-5 left-5 text-xs px-3 py-1 rounded-full 
+                  bg-black/40 backdrop-blur border border-white/10 text-gray-300">
                     {project.tag}
                   </div>
                 )}
               </div>
 
-              {/* Content */}
+              {/* CONTENT */}
               <div className="p-7">
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
                   {project.description}
                 </p>
 
-                {/* Buttons */}
+                {/* BUTTONS */}
                 <div className="mt-6 flex flex-wrap gap-3">
                   {project.github && (
                     <a
@@ -133,8 +141,9 @@ export default function Projects() {
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 px-5 py-2 rounded-xl 
-                      bg-yellow-400 text-black font-semibold
-                      hover:bg-yellow-300 hover:scale-[1.05] transition"
+                      bg-gradient-to-r from-yellow-400 to-orange-400 
+                      text-black font-semibold shadow-lg
+                      hover:scale-105 transition"
                     >
                       Live <FaArrowUpRightFromSquare />
                     </a>
@@ -153,16 +162,18 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Glow Hover */}
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-yellow-400/20 transition" />
+              {/* HOVER GLOW */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition pointer-events-none">
+                <div className="absolute inset-0 rounded-3xl ring-1 ring-yellow-400/30" />
+              </div>
             </motion.article>
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        {/* CTA */}
+        <div className="mt-20 text-center">
           <p className="text-gray-400 text-sm">
-            Want something like this? Let’s build your product 🚀
+            🚀 Have an idea? Let’s turn it into a product.
           </p>
         </div>
       </div>

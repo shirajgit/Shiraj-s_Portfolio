@@ -33,13 +33,13 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <About />
-      <Stats stats={STATS} />
-      <Services services={SERVICES} />
-      <Clients clients={CLIENTS} />
+      <About /> 
       <Company company={COMPANY} />
+       <Services services={SERVICES} />
       <Skills />
+      <Stats stats={STATS} />
       <Projects />
+      <Clients clients={CLIENTS} />
       <Experience />
       <Contact />
       <Footer />

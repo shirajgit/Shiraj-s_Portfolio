@@ -1,8 +1,7 @@
-// src/components/Contact.jsx
 "use client";
 
 import { motion } from "framer-motion";
-  import {
+import {
   FaEnvelope,
   FaWhatsapp,
   FaPhoneAlt,
@@ -12,184 +11,184 @@ import { motion } from "framer-motion";
 } from "react-icons/fa";
 
 const container = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: {},
   show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 20, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 export default function Contact() {
-
-
-const links = [
-  {
-    label: "Email Me",
-    sub: "shirajmujawar03@gmail.com",
-    href: "mailto:shirajmujawar03@gmail.com",
-    icon: <FaEnvelope />,
-    primary: true,
-  },
-  {
-    label: "WhatsApp Me",
-    sub: "+91 81053 69922",
-    href: "https://wa.me/918105369922",
-    icon: <FaWhatsapp />,
-  },
-  {
-    label: "Call Me",
-    sub: "+91 81053 69922",
-    href: "tel:+918105369922",
-    icon: <FaPhoneAlt />,
-  },
-  {
-    label: "LinkedIn",
-    sub: "Connect professionally",
-    href: "https://www.linkedin.com/in/shiraj-mujawar",
-    icon: <FaLinkedin />,
-    external: true,
-  },
-  {
-    label: "GitHub",
-    sub: "See my projects",
-    href: "https://github.com/shirajgit",
-    icon: <FaGithub />,
-    external: true,
-  },
-  {
-    label: "Instagram",
-    sub: "@mr_shiraj_mujawar786",
-    href: "https://instagram.com/mr_shiraj_mujawar786",
-    icon: <FaInstagram />,
-    external: true,
-  },
-];
+  const links = [
+    {
+      label: "Email Me",
+      sub: "shirajmujawar03@gmail.com",
+      href: "mailto:shirajmujawar03@gmail.com",
+      icon: <FaEnvelope />,
+      primary: true,
+    },
+    {
+      label: "WhatsApp",
+      sub: "+91 81053 69922",
+      href: "https://wa.me/918105369922",
+      icon: <FaWhatsapp />,
+    },
+    {
+      label: "Call",
+      sub: "+91 81053 69922",
+      href: "tel:+918105369922",
+      icon: <FaPhoneAlt />,
+    },
+    {
+      label: "LinkedIn",
+      sub: "Let’s connect",
+      href: "https://www.linkedin.com/in/shiraj-mujawar",
+      icon: <FaLinkedin />,
+      external: true,
+    },
+    {
+      label: "GitHub",
+      sub: "View projects",
+      href: "https://github.com/shirajgit",
+      icon: <FaGithub />,
+      external: true,
+    },
+    {
+      label: "Instagram",
+      sub: "@mr_shiraj_mujawar786",
+      href: "https://instagram.com/mr_shiraj_mujawar786",
+      icon: <FaInstagram />,
+      external: true,
+    },
+  ];
 
   return (
     <section
       id="contact"
-      className="relative py-24 bg-gradient-to-b from-black via-gray-950 to-gray-950 text-gray-200 overflow-hidden"
+      className="relative py-28 bg-black text-gray-200 overflow-hidden"
     >
-      {/* background glow */}
-      <div className="pointer-events-none absolute -top-24 left-10 h-72 w-72 rounded-full bg-yellow-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
+      {/* 🌌 Background */}
+      <div className="absolute -top-32 left-1/3 w-[400px] h-[400px] bg-yellow-400/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-1/3 w-[350px] h-[350px] bg-purple-500/10 blur-3xl rounded-full" />
 
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
+      {/* 🔲 Grid */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
-            Let’s talk
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+            Get in touch
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
-            <span className="text-yellow-400">Contact</span> Me
-          </h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind or need a reliable{" "}
-            <span className="text-gray-200 font-semibold">
-              Full-Stack Developer
+
+          <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
+            <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent">
+              Let’s Work Together
             </span>
-            ? Let’s build something clean, fast, and scalable.
+          </h2>
+
+          <p className="mt-5 text-gray-400 max-w-xl mx-auto">
+            Got an idea, project, or business? Let’s turn it into a clean,
+            scalable product 🚀
           </p>
         </motion.div>
 
-        {/* Main Card */}
+        {/* CONTACT GRID */}
         <motion.div
-          variants={{container}}
+          variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="max-w-3xl mx-auto"
+          className="grid sm:grid-cols-2 gap-6"
         >
-          <motion.div
-            variants={{item}}
-            className="relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/70 to-gray-950/70 p-10 shadow-xl overflow-hidden"
-          >
-            {/* inner glow */}
-            <div className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-yellow-400/10 blur-3xl" />
+          {links.map((l) => (
+            <motion.a
+              key={l.label}
+              variants={{item}}
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noreferrer" : undefined}
+              whileHover={{ y: -6 }}
+              className={`group relative rounded-2xl p-6 overflow-hidden transition
+              ${
+                l.primary
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-400 text-black"
+                  : "bg-white/[0.04] border border-white/10 backdrop-blur-xl hover:border-yellow-400/40"
+              }`}
+            >
+              {/* Hover Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-yellow-400/10 to-transparent" />
 
-            {/* Buttons */}
-            <div className="grid sm:grid-cols-2 gap-5">
-              {links.map((l) => (
-                <motion.a
-                  key={l.label}
-                  variants={{item}}
-                  whileHover={{ y: -3, scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                  href={l.href}
-                  target={l.external ? "_blank" : undefined}
-                  rel={l.external ? "noreferrer" : undefined}
-                  className={
+              <div className="relative flex items-center gap-4">
+                {/* ICON */}
+                <div
+                  className={`h-12 w-12 flex items-center justify-center rounded-xl text-lg
+                  ${
                     l.primary
-                      ? "group rounded-2xl bg-yellow-400 text-black border border-yellow-300/30 p-5 hover:bg-yellow-300 transition"
-                      : "group rounded-2xl bg-white/[0.03] border border-white/10 p-5 hover:border-yellow-400/30 hover:bg-white/[0.05] transition"
-                  }
+                      ? "bg-black/10"
+                      : "bg-white/5 border border-white/10 group-hover:border-yellow-400/40"
+                  }`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={
-                        l.primary
-                          ? "h-11 w-11 rounded-xl bg-black/10 flex items-center justify-center text-xl"
-                          : "h-11 w-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl"
-                      }
-                    >
-                      {l.icon}
-                    </div>
+                  {l.icon}
+                </div>
 
-                    <div className="flex-1">
-                      <p
-                        className={
-                          l.primary
-                            ? "font-bold text-lg"
-                            : "font-semibold text-lg text-gray-200 group-hover:text-yellow-200 transition"
-                        }
-                      >
-                        {l.label}
-                      </p>
-                      <p
-                        className={
-                          l.primary
-                            ? "text-sm text-black/70"
-                            : "text-sm text-gray-400"
-                        }
-                      >
-                        {l.sub}
-                      </p>
-                    </div>
+                {/* TEXT */}
+                <div className="flex-1">
+                  <p
+                    className={`text-lg font-semibold ${
+                      l.primary
+                        ? ""
+                        : "text-gray-200 group-hover:text-yellow-300"
+                    }`}
+                  >
+                    {l.label}
+                  </p>
 
-                    <span
-                      className={
-                        l.primary
-                          ? "text-black/60 font-semibold"
-                          : "text-gray-500 group-hover:text-yellow-300 transition font-semibold"
-                      }
-                    >
-                      →
-                    </span>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+                  <p
+                    className={`text-sm ${
+                      l.primary ? "text-black/70" : "text-gray-400"
+                    }`}
+                  >
+                    {l.sub}
+                  </p>
+                </div>
 
-            {/* Bottom Note */}
-            <motion.div variants={{item}} className="mt-8 text-center">
-              <p className="text-sm text-gray-400">
-                Prefer WhatsApp? Ping me on call number — I reply fast ⚡
-              </p>
-            </motion.div>
-          </motion.div>
+                {/* ARROW */}
+                <span
+                  className={`text-xl transition ${
+                    l.primary
+                      ? "text-black/70"
+                      : "text-gray-500 group-hover:text-yellow-300"
+                  }`}
+                >
+                  →
+                </span>
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* CTA FOOT */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="text-center mt-14"
+        >
+          <p className="text-gray-400 text-sm">
+            ⚡ Fast replies • Open for freelance • Let’s build something amazing
+          </p>
         </motion.div>
       </div>
     </section>

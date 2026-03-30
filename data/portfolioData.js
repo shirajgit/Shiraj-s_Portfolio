@@ -20,8 +20,8 @@ export const COMPANY = {
 export const STATS = [
   { label: "Client Projects", value: "5+" },
   { label: "Internship Experience", value: "6 Months" },
-  { label: "Tech Stack", value: "MERN + Next.js" },
-  { label: "CGPA", value: "9.5" },
+  { label: "Tech Stack", value: "15" },
+  { label: "CGPA", value: "10" },
 ];
 
 export const CLIENTS = [
