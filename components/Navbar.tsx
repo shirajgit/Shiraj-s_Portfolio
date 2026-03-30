@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("about");
+  const [scrolled, setScrolled] = useState(false);
 
   const links = [
     { href: "#about", label: "About", id: "about" },
@@ -14,138 +16,129 @@ export default function Navbar() {
     { href: "#contact", label: "Contact", id: "contact" },
   ];
 
+  // 🔥 Active section tracking
   useEffect(() => {
     const handleScroll = () => {
-      const sections = links.map((l) => document.getElementById(l.id));
       const scrollY = window.scrollY + 120;
 
-      sections.forEach((section) => {
+      links.forEach((l) => {
+        const section = document.getElementById(l.id);
         if (!section) return;
+
         const top = section.offsetTop;
         const height = section.offsetHeight;
 
         if (scrollY >= top && scrollY < top + height) {
-          setActive(section.id);
+          setActive(l.id);
         }
       });
+
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
+  // 🔒 Lock scroll when menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [open]);
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-md text-white">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 relative z-50">
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 
+      transition-all duration-300
+      ${
+        scrolled
+          ? "bg-black/70 backdrop-blur-xl border border-white/10 shadow-lg"
+          : "bg-white/5 backdrop-blur-md border border-white/10"
+      }
+      rounded-2xl px-6 py-3 w-[95%] max-w-5xl`}
+    >
+      <div className="flex items-center justify-between">
+
         {/* Logo */}
         <a
           href="#top"
-          className="font-extrabold text-2xl text-yellow-400 tracking-tight hover:text-yellow-300 transition"
+          className="font-extrabold text-xl text-yellow-400"
           onClick={() => setOpen(false)}
         >
           Shiraj<span className="text-white/30">.</span>
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-2 relative">
+
           {links.map((l) => (
             <a
-              key={l.href}
+              key={l.id}
               href={l.href}
-              className={`relative transition-colors duration-200 ${
-                active === l.id ? "text-yellow-400" : "hover:text-yellow-400"
-              }`}
+              className="relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition"
             >
-              {l.label}
-              <span
-                className={`absolute -bottom-2 left-0 h-[2px] bg-yellow-400 transition-all duration-300 ${
-                  active === l.id ? "w-full" : "w-0"
-                }`}
-              />
+              {active === l.id && (
+                <motion.span
+                  layoutId="nav-pill"
+                  className="absolute inset-0 bg-yellow-400/10 rounded-xl border border-yellow-400/20"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+              <span className="relative z-10">{l.label}</span>
             </a>
           ))}
+
         </div>
 
-        {/* Mobile button */}
+        {/* Mobile Button */}
         <button
-          type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-200 hover:text-yellow-400 hover:bg-white/5 transition focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 rounded-lg border border-white/10 bg-white/5"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          <div className="space-y-1">
+            <span
+              className={`block h-[2px] w-5 bg-white transition ${
+                open ? "rotate-45 translate-y-[6px]" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 bg-white transition ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-[2px] w-5 bg-white transition ${
+                open ? "-rotate-45 -translate-y-[6px]" : ""
+              }`}
+            />
+          </div>
         </button>
       </div>
 
-      {/* Mobile dropdown */}
-      <div
-        className={`md:hidden relative z-50 transition-all duration-300 ease-out ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        } overflow-hidden bg-black/85 backdrop-blur-md border-t border-white/10`}
-      >
-        <div className="flex flex-col items-center gap-4 py-5">
+      {/* 🔥 Mobile Fullscreen Menu */}
+      {open && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 text-xl"
+        >
           {links.map((l) => (
-            <a
-              key={l.href}
+            <motion.a
+              key={l.id}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`transition-colors duration-200 ${
-                active === l.id
-                  ? "text-yellow-400"
-                  : "text-gray-200 hover:text-yellow-400"
+              whileHover={{ scale: 1.1 }}
+              className={`${
+                active === l.id ? "text-yellow-400" : "text-gray-300"
               }`}
             >
               {l.label}
-            </a>
+            </motion.a>
           ))}
-        </div>
-      </div>
-
-      {/* Overlay */}
-      {open && (
-        <div
-          className="md:hidden fixed inset-0 top-[72px] bg-black/40 z-40"
-          onClick={() => setOpen(false)}
-        />
+        </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 }

@@ -2,6 +2,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+  import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+} from "react-icons/fa";
 
 const container = {
   hidden: { opacity: 0, y: 14 },
@@ -18,49 +26,50 @@ const item = {
 };
 
 export default function Contact() {
-  const links = [
-    {
-      label: "Email Me",
-      sub: "shirajmujawar03@gmail.com",
-      href: "mailto:shirajmujawar03@gmail.com",
-      icon: "✉️",
-      primary: true,
-    },
-      {
-      label: "WhatsApp Me",
-      sub: "+91 81053 69922",
-      href: "https://wa.me/918105369922",
-      icon: "💬",
- 
-    },
-    {
-      label: "Call Me",
-      sub: "+91 81053 69922",
-      href: "tel:+918105369922",
-      icon: "📞",
-    },
-    {
-      label: "LinkedIn",
-      sub: "Connect professionally",
-      href: "https://www.linkedin.com/in/shiraj-mujawar",
-      icon: "💼",
-      external: true,
-    },
-    {
-      label: "GitHub",
-      sub: "See my projects",
-      href: "https://github.com/shirajgit",
-      icon: "🐙",
-      external: true,
-    },
-    {
-      label: "Instagram",
-      sub: "@mr_shiraj_mujawar786",
-      href: "https://instagram.com/mr_shiraj_mujawar786",
-      icon: "📸",
-      external: true,
-    },
-  ];
+
+
+const links = [
+  {
+    label: "Email Me",
+    sub: "shirajmujawar03@gmail.com",
+    href: "mailto:shirajmujawar03@gmail.com",
+    icon: <FaEnvelope />,
+    primary: true,
+  },
+  {
+    label: "WhatsApp Me",
+    sub: "+91 81053 69922",
+    href: "https://wa.me/918105369922",
+    icon: <FaWhatsapp />,
+  },
+  {
+    label: "Call Me",
+    sub: "+91 81053 69922",
+    href: "tel:+918105369922",
+    icon: <FaPhoneAlt />,
+  },
+  {
+    label: "LinkedIn",
+    sub: "Connect professionally",
+    href: "https://www.linkedin.com/in/shiraj-mujawar",
+    icon: <FaLinkedin />,
+    external: true,
+  },
+  {
+    label: "GitHub",
+    sub: "See my projects",
+    href: "https://github.com/shirajgit",
+    icon: <FaGithub />,
+    external: true,
+  },
+  {
+    label: "Instagram",
+    sub: "@mr_shiraj_mujawar786",
+    href: "https://instagram.com/mr_shiraj_mujawar786",
+    icon: <FaInstagram />,
+    external: true,
+  },
+];
 
   return (
     <section

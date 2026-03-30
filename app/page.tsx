@@ -14,9 +14,9 @@ import Stats from "@/components/Stats";
 import { COMPANY, STATS, CLIENTS, SERVICES } from "@/data/portfolioData";
 
 export const metadata: Metadata = {
-  title: "Shiraj Mujawar | MERN Stack Developer | Full Stack Developer",
+  title: "Shiraj Mujawar - Full Stack Engineer & Product Builder",
   description:
-    "Shiraj Mujawar is a MERN stack developer from India building scalable web applications, modern UI systems, and digital products.",
+    "Shiraj Mujawar is a Full Stack Engineer from India building scalable web applications, modern UI systems, and digital products.",
   keywords: [
     "Shiraj Mujawar",
     "MERN developer",

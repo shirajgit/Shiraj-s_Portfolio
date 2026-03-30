@@ -1,4 +1,3 @@
-// src/components/Skills.jsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -55,103 +54,114 @@ const BLOCKS = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0, y: 14 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.12 },
-  },
-};
-
-const card = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
-};
-
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 bg-gradient-to-b from-black via-gray-950 to-black text-gray-200 overflow-hidden"
+      className="relative py-24 bg-black text-gray-200 overflow-hidden"
     >
-      {/* subtle background glow */}
-      <div className="pointer-events-none absolute -top-24 left-10 h-72 w-72 rounded-full bg-yellow-400/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
+      {/* 🌌 Background Glow */}
+      <div className="absolute -top-32 left-1/4 w-[400px] h-[400px] bg-yellow-400/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-purple-500/10 blur-3xl rounded-full" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      {/* 🔲 Grid */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
-            What I use
+            Tech Stack
           </p>
+
           <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
-            <span className="text-yellow-400">Technical</span> Skills
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              Skills & Tools
+            </span>
           </h2>
+
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            A focused stack for building product-ready web apps — clean UI,
-            solid backend, and smooth deployment.
+            Technologies I use to build fast, scalable, and production-ready applications.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={{container}}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="grid md:grid-cols-3 gap-10"
-        >
-          {BLOCKS.map((b) => (
+        {/* CARDS */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {BLOCKS.map((b, i) => (
             <motion.div
               key={b.title}
-              variants={{card}}
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900/70 to-gray-950/70 p-7 shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative rounded-2xl border border-white/10 
+              bg-white/[0.04] backdrop-blur-xl p-7 shadow-2xl 
+              overflow-hidden transition"
             >
-              {/* card glow */}
-              <div className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-yellow-400/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-500" />
+              {/* ✨ Hover Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-yellow-400/5 blur-2xl" />
 
-              <div className="flex items-start justify-between gap-4">
+              {/* 🔥 Top */}
+              <div className="flex items-start justify-between">
                 <div>
                   <h3 className="text-xl font-semibold group-hover:text-yellow-300 transition">
                     {b.title}
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">{b.subtitle}</p>
+                  <p className="text-sm text-gray-400 mt-1">
+                    {b.subtitle}
+                  </p>
                 </div>
 
-                <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-lg">
+                <div className="w-11 h-11 flex items-center justify-center rounded-xl 
+                bg-white/[0.05] border border-white/10 text-xl 
+                group-hover:scale-110 transition">
                   {b.icon}
                 </div>
               </div>
 
+              {/* 💡 Skills */}
               <div className="mt-6 flex flex-wrap gap-2.5">
-                {b.skills.map((skill) => (
+                {b.skills.map((skill, idx) => (
                   <motion.span
                     key={skill}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 18 }}
-                    className="px-3 py-1.5 text-sm rounded-full bg-white/[0.04] border border-white/10 text-gray-200 hover:border-yellow-400/40 hover:text-yellow-200"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.03 }}
+                    whileHover={{ scale: 1.08 }}
+                    className="px-3 py-1.5 text-sm rounded-full 
+                    bg-white/[0.05] border border-white/10 
+                    hover:border-yellow-400/40 hover:text-yellow-300 
+                    transition cursor-default"
                   >
                     {skill}
                   </motion.span>
                 ))}
               </div>
 
-              <div className="mt-6 h-[1px] w-full bg-white/10" />
+              {/* 📊 Progress Bar Fake (premium feel) */}
+              <div className="mt-6">
+                <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "80%" }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    className="h-full bg-gradient-to-r from-yellow-400 to-orange-400"
+                  />
+                </div>
+              </div>
 
-              <p className="mt-4 text-sm text-gray-400">
-                {/* small footer line for polish */}
-                Building blocks I use frequently in real projects.
+              {/* 🧠 Footer */}
+              <p className="mt-4 text-xs text-gray-500">
+                Used in real-world projects & client work.
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

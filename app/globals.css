@@ -33,3 +33,53 @@ body {
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
 }
+
+@keyframes gradient {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 4s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradientMove 6s linear infinite;
+}
+
+/* Floating */
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Glow pulse */
+@keyframes glow {
+  0%,100% { opacity: 0.2 }
+  50% { opacity: 0.5 }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
