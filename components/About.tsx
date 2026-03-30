@@ -3,6 +3,17 @@
 
 import { motion } from "framer-motion";
 
+import {
+  FaUserGraduate,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaBuilding,
+  FaHandshake,
+  FaReact,
+  FaBrain,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+
 export default function About() {
   const container = {
     hidden: { opacity: 0, y: 18 },
@@ -177,57 +188,64 @@ export default function About() {
                 </span>
               </div>
 
-              <ul className="space-y-5 text-gray-300">
-                {[
-  {
-    icon: "🎓",
-    text: "Diploma Student",
-    meta: "(Graduating 2026)",
-  },
-  { icon: "💻", text: "MERN Stack Developer", meta: "" },
-  {
-    icon: "📱",
-    text: "App Development (React Native / Expo)",
-    meta: "",
-  },
-  {
-    icon: "🏢",
-    text: "Building products for startups & companies",
-    meta: "",
-  },
-  {
-    icon: "🤝",
-    text: "Client Projects & Freelance Work",
-    meta: "",
-  },
-  {
-    icon: "⚛️",
-    text: "React • Next.js • Node • MongoDB",
-    meta: "",
-  },
-  {
-    icon: "🧠",
-    text: "Embedded / IoT Engineering",
-    meta: "",
-  },
-  { icon: "📍", text: "Vijayapura, India", meta: "" },
-].map((row) => (
-                  <motion.li
-                    key={row.text}
-                    whileHover={{ x: 6 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    className="flex items-center gap-4"
-                  >
-                    <span className="text-xl">{row.icon}</span>
-                    <span>
-                      {row.text}{" "}
-                      {row.meta && (
-                        <span className="text-sm text-gray-400">{row.meta}</span>
-                      )}
-                    </span>
-                  </motion.li>
-                ))}
-              </ul>
+             
+
+<ul className="space-y-5 text-gray-300">
+  {[
+    {
+      icon: <FaUserGraduate />,
+      text: "Diploma Student",
+      meta: "(Graduating 2026)",
+    },
+    { icon: <FaLaptopCode />, text: "MERN Stack Developer", meta: "" },
+    {
+      icon: <FaMobileAlt />,
+      text: "App Development (React Native / Expo)",
+      meta: "",
+    },
+    {
+      icon: <FaBuilding />,
+      text: "Building products for startups & companies",
+      meta: "",
+    },
+    {
+      icon: <FaHandshake />,
+      text: "Client Projects & Freelance Work",
+      meta: "",
+    },
+    {
+      icon: <FaReact />,
+      text: "React • Next.js • Node • MongoDB",
+      meta: "",
+    },
+    {
+      icon: <FaBrain />,
+      text: "Embedded / IoT Engineering",
+      meta: "",
+    },
+    {
+      icon: <FaMapMarkerAlt />,
+      text: "Vijayapura, India",
+      meta: "",
+    },
+  ].map((row) => (
+    <motion.li
+      key={row.text}
+      whileHover={{ x: 6 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className="flex items-center gap-4"
+    >
+      <span className="text-xl text-blue-400">{row.icon}</span>
+
+      <span>
+        {row.text}{" "}
+        {row.meta && (
+          <span className="text-sm text-gray-400">{row.meta}</span>
+        )}
+      </span>
+    </motion.li>
+  ))}
+</ul>
 
               {/* Added: mini value statement */}
               <div className="mt-7 rounded-xl border border-white/10 bg-white/[0.03] p-4">
