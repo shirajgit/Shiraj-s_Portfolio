@@ -19,7 +19,7 @@ const experiences = [
   },
   {
     role: "Full-Stack Developer",
-    company: "OneRoot, Bengaluru",
+    company: "Vizionexl tech, Bengaluru",
     duration: "6 Months Internship",
     points: [
       "Developed full-stack apps using MERN stack.",
