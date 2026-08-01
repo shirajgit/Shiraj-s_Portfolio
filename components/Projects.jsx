@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { FaGithub, FaArrowRight } from "react-icons/fa";
@@ -73,12 +74,16 @@ export default function Projects() {
               className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl"
             >
               {/* IMAGE */}
-              <div className="relative overflow-hidden">
-                <img
+              <div className="relative overflow-hidden h-72 md:h-96">
+                <Image
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-72 md:h-96 object-cover 
-                  transition duration-700 ease-out 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={70}
+                  loading="lazy"
+                  className="object-cover
+                  transition duration-700 ease-out
                   group-hover:scale-110 group-hover:rotate-[1deg]"
                 />
 
