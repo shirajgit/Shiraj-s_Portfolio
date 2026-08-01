@@ -8,15 +8,31 @@ export const projects = [
     github: "https://github.com/shirajgit/Dture.git",
     live: "https://dtrue.vercel.app",
     img:"/Dture.png",
+  },  
+  {
+    title: "Portxz",
+    description: "Portxz -A modern portfolio website built with React and Tailwind CSS, showcasing my projects and skills.",
+    tech: ["nextjs", "my Sql", "node.js", "vercel", "tailwindcss"],
+    github: "https://github.com/shirajgit/Portxz.git",
+    live: "https://portxz.vercel.app",
+    img:"/portxz.png",
+  }, 
+   {
+    title: "Growthx",
+    description:"Your all-in-one growth dashboard to track tasks, projects, jobs, clients, and progress — built for developers, freelancers, and builders.",
+     tech: ["NEXTjs", "Express", "Tailwind CSS", "nodejs", "mongoDB"],
+    github: "https://github.com/shirajgit/Growthx.git",
+    live: "https://growthx-ai.vercel.app/",
+    img:"/growthx.png",
   },
   {
-    title: "ChatMath",
+    title: "Workmax Os",
     description:
-      "ChatMath — Smart Chat + Math Assistant A full-stack real-time chat application with an integrated SymPy-powered math solver.",
-    tech: ["FastAPI ", "WebSockets", " MongoDB", "React","TailwindCss"],
-    github: "https://github.com/shirajgit/chatmath.git",
-    live: "https://chatcal-lac.vercel.app/",
-    img:"/chatmath.png",
+      "Workmax — A productivity tool for managing tasks, projects, and teams with a modern UI and seamless integration.",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/shirajgit/Workmax.git",
+    live: "https://workmax-os.vercel.app/",
+    img:"/workmax.png",
   },
   {
     title: "Shiraj's Drive",
@@ -28,35 +44,18 @@ export const projects = [
     img:"/Drive.png",
   },
   {
-    title: "AI Resume Analyzer",
+    title: "Hero Resizer",
     description:
-      "A web application that analyzes resumes using AI to provide insights and feedback for better job applications.",
-    tech: ["Reactjs", "PuterJs", "Srevless", "AI API","TailwindCss"],
-    github: "https://github.com/shirajgit/ai-resume-analyzer.git",
-    live: "https://ai-resume-analyzer-smoky-eta.vercel.app",
-    img:"/ai-analyzer.png",
+      "A web application that allows users to resize images and videos for social media platforms, built with React and Tailwind CSS.",
+    tech: ["Reactjs", "Nextjs", "Ai integrate","TailwindCss"],
+    github: "https://github.com/shirajgit/hero-resizer.git",
+    live: "https://hero-resizer.vercel.app",
+    img:"/hero-resizer.png",
   },
   
  
-  
-  {
-    title: "clickonadzz",
-    description:
-      "We build data-driven digital marketing strategies that deliver transformational growth and exceptional results — designed to lower your acquisition costs.",
-    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive Design"],
-    github: "https://github.com/shirajgit/clickOnAdds.git",
-    live: "https://clickonadzz.com",
-    img:"/clickonadzz.png",
-  },
-  {
-    title: "Al CodeReviewer",
-    description:
-      "An e-commerce landing page with modern UI and responsive design, optimized for smooth user interactions and product showcase.",
-    tech: ["NEXTjs", "Express", "Tailwind CSS", "JavaScript", "mongoDB"],
-    github: "https://github.com/shirajgit/Code-Reviewer.git",
-    live: "https://coderiviewer.vercel.app/",
-    img:"/code.png",
-  } 
+
+ 
 ];
 
 

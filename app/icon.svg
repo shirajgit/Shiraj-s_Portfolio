@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="45%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- dark rounded tile -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="#0a0a0a"/>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#glow)"/>
+  <rect x="18.5" y="18.5" width="475" height="475" rx="109" fill="none"
+        stroke="url(#gold)" stroke-opacity="0.35" stroke-width="5"/>
+
+  <!-- geometric "S" mark -->
+  <path fill="none" stroke="url(#gold)" stroke-width="52"
+        stroke-linecap="round" stroke-linejoin="round"
+        d="M348 168
+           C348 128 300 116 256 116
+           C196 116 164 148 164 190
+           C164 236 210 250 256 256
+           C302 262 348 276 348 322
+           C348 364 316 396 256 396
+           C212 396 164 384 164 344"/>
+</svg>
