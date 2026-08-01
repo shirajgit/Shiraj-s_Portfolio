@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     // opengraph-image.tsx is picked up automatically.
   },
+   verification: {
+    google: "NITnOs7yjovdQZveJybWa0201nQSpNeZ1cr8VWKwqSU",
+  },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
@@ -75,7 +78,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// Structured data — helps Google show a rich "person / portfolio" result.
+// Structured data — helps Google understand "this page IS Shiraj Mujawar"
+// and can power a rich person result / knowledge panel.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -83,9 +87,17 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${siteConfig.url}/#person`,
       name: siteConfig.name,
+      alternateName: ["Shiraj", "Shiraj Mujawar Developer"],
       url: siteConfig.url,
+      image: `${siteConfig.url}/profile.jpeg`,
       jobTitle: siteConfig.role,
+      description: siteConfig.description,
       email: `mailto:${siteConfig.links.email}`,
+      nationality: "Indian",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "IN",
+      },
       worksFor: {
         "@type": "Organization",
         name: siteConfig.company,
@@ -108,6 +120,15 @@ const jsonLd = {
       name: siteConfig.title,
       description: siteConfig.description,
       publisher: { "@id": `${siteConfig.url}/#person` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.url}/#profilepage`,
+      url: siteConfig.url,
+      name: siteConfig.title,
+      about: { "@id": `${siteConfig.url}/#person` },
+      isPartOf: { "@id": `${siteConfig.url}/#website` },
       inLanguage: "en",
     },
   ],
