@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useRef, useState, type MouseEvent } from "react";
 import {
@@ -15,6 +16,9 @@ import {
 } from "react-icons/fa";
 import { Magnetic } from "./motion-kit";
 
+// 3D scene is client-only (three.js) — never render on the server.
+const Scene3D = dynamic(() => import("./Scene3D"), { ssr: false });
+
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
@@ -22,12 +26,12 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const fadeRight = {
   hidden: { opacity: 0, x: 40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 export default function Hero() {
@@ -63,6 +67,12 @@ export default function Hero() {
       {/* ✨ Glows */}
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-purple-500/10 rounded-full blur-3xl animate-float [animation-delay:2s]" />
+
+      {/* 🧊 REAL 3D SCENE — animated gold core + particles.
+          Sits behind content, biased to the right half on desktop. */}
+      <div className="absolute inset-0 z-[1] opacity-90 lg:left-1/3 [mask-image:radial-gradient(ellipse_80%_80%_at_60%_45%,black,transparent)]">
+        <Scene3D />
+      </div>
 
       {/* 🔲 Grid, fading at edges */}
       <div
@@ -102,11 +112,11 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center pt-28 pb-16 lg:py-0">
 
         {/* ◀️ LEFT — TEXT */}
-        <motion.div variants={{container} }initial="hidden" animate="show" className="text-center lg:text-left">
+        <motion.div variants={container} initial="hidden" animate="show" className="text-center lg:text-left">
 
           {/* Badge */}
           <motion.div
-            variants={{fadeUp}}
+            variants={fadeUp}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
             backdrop-blur-md bg-white/5 border border-white/10 text-sm text-gray-300"
           >
@@ -119,7 +129,7 @@ export default function Hero() {
 
           {/* Eyebrow */}
           <motion.p
-            variants={{fadeUp}}
+            variants={fadeUp}
             className="mt-8 text-sm uppercase tracking-[0.3em] text-gray-500"
           >
             Full-Stack Developer
@@ -127,14 +137,14 @@ export default function Hero() {
 
           {/* HUGE headline, stacked */}
           <motion.h1
-            variants={{fadeUp}} 
+            variants={fadeUp}
             className="mt-4 text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-tight"
           >
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
                 className="block"
               >
                 Shiraj
@@ -144,7 +154,7 @@ export default function Hero() {
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ delay: 0.55, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.55, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
                 className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent animate-gradient"
               >
                 Mujawar
@@ -153,14 +163,14 @@ export default function Hero() {
           </motion.h1>
 
           {/* Tagline */}
-          <motion.p variants={{fadeUp}} className="mt-6 text-lg md:text-xl text-gray-400 max-w-md mx-auto lg:mx-0">
+          <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-gray-400 max-w-md mx-auto lg:mx-0">
             <span className="text-yellow-400 font-semibold">Building real products</span>{" "}
             — not just projects. MERN, Next.js, App Dev & IoT.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            variants={{fadeUp}}
+            variants={fadeUp}
             className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
           >
             <Magnetic>
@@ -193,7 +203,7 @@ export default function Hero() {
 
           {/* Inline mini-stats — structure, not decoration */}
           <motion.div
-            variants={{fadeUp}}
+            variants={fadeUp}
             className="mt-12 flex gap-10 justify-center lg:justify-start"
           >
             {[
@@ -211,7 +221,7 @@ export default function Hero() {
 
         {/* ▶️ RIGHT — VISUAL */}
         <motion.div
-          variants={{fadeRight}}
+          variants={fadeRight}
           initial="hidden"
           animate="show"
           className="relative flex justify-center lg:justify-end"

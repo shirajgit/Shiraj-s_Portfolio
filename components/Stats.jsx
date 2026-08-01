@@ -3,6 +3,7 @@
 
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { TiltCard } from "./motion-kit";
 
 /* 🔢 Counter that only runs when scrolled into view, with spring easing */
 function Counter({ value, suffix = "+" }) {
@@ -61,30 +62,34 @@ export default function Stats({ stats }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-              className="group relative rounded-2xl border border-white/10
-              bg-white/[0.04] backdrop-blur-xl p-6 overflow-hidden
-              hover:border-yellow-400/40 transition-all duration-300 shadow-xl"
             >
-              {/* ✨ Shimmer sweep on hover */}
-              <div
-                className="absolute inset-0 -translate-x-full group-hover:translate-x-full
-                transition-transform duration-1000 ease-out
-                bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"
-              />
+              <TiltCard
+                max={10}
+                className="group relative rounded-2xl border border-white/10
+                bg-white/[0.04] backdrop-blur-xl p-6 overflow-hidden h-full
+                hover:border-yellow-400/40 shadow-xl [transform-style:preserve-3d]"
+              >
+                {/* ✨ Shimmer sweep on hover */}
+                <div
+                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full
+                  transition-transform duration-1000 ease-out
+                  bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent"
+                />
 
-              <div className="relative z-10">
-                <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tabular-nums">
-                  <Counter value={s.value} />
-                </p>
-                <p className="text-gray-400 mt-2 group-hover:text-yellow-200 transition">
-                  {s.label}
-                </p>
-              </div>
+                {/* content lifted off the card in 3D space */}
+                <div className="relative z-10 [transform:translateZ(40px)]">
+                  <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tabular-nums">
+                    <Counter value={s.value} />
+                  </p>
+                  <p className="text-gray-400 mt-2 group-hover:text-yellow-200 transition">
+                    {s.label}
+                  </p>
+                </div>
 
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-400/5 blur-xl rounded-full group-hover:bg-yellow-400/15 transition" />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-yellow-400/20 transition" />
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-400/5 blur-xl rounded-full group-hover:bg-yellow-400/15 transition" />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-yellow-400/20 transition" />
+              </TiltCard>
             </motion.div>
           ))}
         </div>
