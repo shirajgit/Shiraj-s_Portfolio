@@ -90,7 +90,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-400">
             Get in touch
           </p>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                   className={`text-xl transition ${
                     l.primary
                       ? "text-black/70"
-                      : "text-gray-500 group-hover:text-yellow-300"
+                      : "text-gray-400 group-hover:text-yellow-300"
                   }`}
                 >
                   →

@@ -95,9 +95,11 @@ export default function Navbar() {
         {/* Mobile Button */}
         <button
           onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
           className="md:hidden p-2 rounded-lg border border-white/10 bg-white/5"
         >
-          <div className="space-y-1">
+          <div className="space-y-1" aria-hidden="true">
             <span
               className={`block h-[2px] w-5 bg-white transition ${
                 open ? "rotate-45 translate-y-[6px]" : ""

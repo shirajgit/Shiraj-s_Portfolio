@@ -24,7 +24,7 @@ export default function Clients({ clients }) {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-400">
             Work
           </p>
 
@@ -109,7 +109,7 @@ export default function Clients({ clients }) {
 
               {/* BOTTOM CTA */}
               <div className="mt-8 flex items-center justify-between text-sm">
-                <span className="text-gray-500 group-hover:text-yellow-300 transition">
+                <span className="text-gray-400 group-hover:text-yellow-300 transition">
                   View details
                 </span>
 

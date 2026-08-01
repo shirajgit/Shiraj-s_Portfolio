@@ -157,7 +157,7 @@ export default function Skills() {
               </div>
 
               {/* 🧠 Footer */}
-              <p className="mt-4 text-xs text-gray-500">
+              <p className="mt-4 text-xs text-gray-400">
                 Used in real-world projects & client work.
               </p>
             </motion.div>

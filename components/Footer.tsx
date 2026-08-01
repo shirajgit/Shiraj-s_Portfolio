@@ -66,14 +66,17 @@ export default function Footer() {
                 {
                   icon: <FaGithub />,
                   link: "https://github.com/shirajgit",
+                  label: "GitHub",
                 },
                 {
                   icon: <FaLinkedin />,
                   link: "https://www.linkedin.com/in/shiraj-mujawar",
+                  label: "LinkedIn",
                 },
                 {
                   icon: <FaInstagram />,
                   link: "https://instagram.com/mr_shiraj_mujawar786",
+                  label: "Instagram",
                 },
               ].map((s, i) => (
                 <motion.a
@@ -81,11 +84,13 @@ export default function Footer() {
                   href={s.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={s.label}
+                  title={s.label}
                   whileHover={{ y: -3, scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-xl text-gray-400 hover:text-yellow-400 transition"
                 >
-                  {s.icon}
+                  <span aria-hidden="true">{s.icon}</span>
                 </motion.a>
               ))}
             </div>
@@ -107,7 +112,7 @@ export default function Footer() {
         <div className="mt-16 h-px bg-white/10" />
 
         {/* BOTTOM */}
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+        <div className="mt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4">
 
           <p>
             © {new Date().getFullYear()} Shiraj Mujawar
@@ -122,7 +127,7 @@ export default function Footer() {
             Back to top <FaArrowUp />
           </motion.a>
 
-          <p className="text-gray-600">
+          <p className="text-gray-400">
             Next.js • Tailwind • Framer Motion
           </p>
         </div>

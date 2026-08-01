@@ -43,7 +43,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+          <p className="text-sm uppercase tracking-[0.25em] text-gray-400">
             Portfolio
           </p>
 

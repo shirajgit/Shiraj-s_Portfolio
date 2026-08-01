@@ -4,7 +4,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { useRef, useState, type MouseEvent } from "react";
+import { useRef, useState, useEffect, type MouseEvent } from "react";
 import {
   FaArrowRight,
   FaDownload,
@@ -38,6 +38,23 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [spot, setSpot] = useState({ x: 50, y: 50 });
 
+  // ⚡ Perf gate: the WebGL 3D scene is heavy (~5MB three.js + WebGL compile).
+  // Only mount it on capable desktops so mobile stays fast. Phones get the
+  // lightweight CSS glow background instead.
+  const [enable3D, setEnable3D] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const enoughCores = (navigator.hardwareConcurrency ?? 4) >= 4;
+    if (isDesktop && finePointer && !reducedMotion && enoughCores) {
+      setEnable3D(true);
+    }
+  }, []);
+
   const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
     const rect = sectionRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -69,10 +86,13 @@ export default function Hero() {
       <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-purple-500/10 rounded-full blur-3xl animate-float [animation-delay:2s]" />
 
       {/* 🧊 REAL 3D SCENE — animated gold core + particles.
-          Sits behind content, biased to the right half on desktop. */}
-      <div className="absolute inset-0 z-[1] opacity-90 lg:left-1/3 [mask-image:radial-gradient(ellipse_80%_80%_at_60%_45%,black,transparent)]">
-        <Scene3D />
-      </div>
+          Desktop only (gated for mobile performance). Mobile keeps the
+          CSS glows above as a lightweight fallback. */}
+      {enable3D && (
+        <div className="absolute inset-0 z-[1] opacity-90 lg:left-1/3 [mask-image:radial-gradient(ellipse_80%_80%_at_60%_45%,black,transparent)]">
+          <Scene3D />
+        </div>
+      )}
 
       {/* 🔲 Grid, fading at edges */}
       <div
@@ -90,18 +110,20 @@ export default function Hero() {
         className="hidden lg:flex flex-col items-center gap-5 absolute left-8 bottom-0 z-20"
       >
         {[
-          { icon: <FaGithub />, href: "https://github.com/shirajgit" },
-          { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/shiraj-mujawar" },
-          { icon: <FaEnvelope />, href: "mailto:shirajmujawar03@gmail.com" },
+          { icon: <FaGithub />, href: "https://github.com/shirajgit", label: "GitHub" },
+          { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/shiraj-mujawar", label: "LinkedIn" },
+          { icon: <FaEnvelope />, href: "mailto:shirajmujawar03@gmail.com", label: "Email" },
         ].map((s, i) => (
           <a
             key={i}
             href={s.href}
             target="_blank"
             rel="noreferrer"
-            className="text-gray-500 hover:text-yellow-400 hover:-translate-y-1 transition text-lg"
+            aria-label={s.label}
+            title={s.label}
+            className="text-gray-400 hover:text-yellow-400 hover:-translate-y-1 transition text-lg"
           >
-            {s.icon}
+            <span aria-hidden="true">{s.icon}</span>
           </a>
         ))}
         {/* vertical line under icons */}
@@ -130,7 +152,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <motion.p
             variants={fadeUp}
-            className="mt-8 text-sm uppercase tracking-[0.3em] text-gray-500"
+            className="mt-8 text-sm uppercase tracking-[0.3em] text-gray-400"
           >
             Full-Stack Developer
           </motion.p>
@@ -213,7 +235,7 @@ export default function Hero() {
             ].map((s) => (
               <div key={s.l} className="text-center lg:text-left">
                 <p className="text-2xl font-extrabold text-yellow-400">{s.n}</p>
-                <p className="text-xs text-gray-500 mt-1">{s.l}</p>
+                <p className="text-xs text-gray-400 mt-1">{s.l}</p>
               </div>
             ))}
           </motion.div>

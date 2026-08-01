@@ -91,7 +91,7 @@ export default function Services({ services }) {
               </div>
 
               {/* Bottom subtle CTA */}
-              <div className="mt-6 text-sm text-gray-500 group-hover:text-yellow-300 transition">
+              <div className="mt-6 text-sm text-gray-400 group-hover:text-yellow-300 transition">
                 Learn more →
               </div>
 
