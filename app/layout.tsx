@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-ignore: Next.js global CSS import without local type declarations
 import "./globals.css";
 import { siteConfig } from "./site.config";
 
