@@ -83,3 +83,49 @@ html {
 .animate-glow {
   animation: glow 3s ease-in-out infinite;
 }
+
+/* Add these to src/app/globals.css */
+
+/* 🌈 animate-gradient — makes your gradient text shimmer (you already use this class in Hero but it needs these keyframes) */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-x 4s ease infinite;
+}
+
+/* 🔄 animate-spin-slow — for the profile gradient ring (also used in Hero but undefined by default) */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* 🖱️ Smooth native scrolling for anchor links (#projects, #contact) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🫧 Subtle floating for glow blobs — apply .animate-float to your blur circles */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-25px) scale(1.05); }
+}
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ♿ Respect users who prefer reduced motion — keeps the site professional */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
