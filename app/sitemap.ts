@@ -7,9 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sections = [
     "",
     "#about",
-    "#services",
     "#skills",
     "#projects",
+    "#clients",
     "#experience",
     "#contact",
   ];

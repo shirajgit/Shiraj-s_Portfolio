@@ -17,6 +17,23 @@ export const siteConfig = {
   company: "Aishi Technologies",
   locale: "en_US",
 
+  // 🧑‍💼 Professional facts — power the Person/Organization JSON-LD.
+  jobTitle: "Full-Stack Engineer & Product Builder",
+  addressLocality: "Bengaluru",
+  addressRegion: "Karnataka",
+
+  // Current employer (most recent role).
+  currentEmployer: {
+    name: "Legit Farms",
+    url: "https://legitfarms.com/",
+  },
+
+  // Company Shiraj founded.
+  foundedCompany: {
+    name: "Aishi Technologies",
+    url: "https://aishitech.online/",
+  },
+
   keywords: [
     "Shiraj Mujawar",
     "Full Stack Engineer",
@@ -40,6 +57,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/shirajgit",
     linkedin: "https://www.linkedin.com/in/shiraj-mujawar",
+    instagram: "https://instagram.com/mr_shiraj_mujawar786",
     email: "shirajmujawar03@gmail.com",
   },
 
