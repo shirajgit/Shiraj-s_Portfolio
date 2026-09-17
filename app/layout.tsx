@@ -175,6 +175,24 @@ const jsonLd = {
       isPartOf: { "@id": `${siteConfig.url}/#website` },
       inLanguage: "en",
     },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteConfig.url}/#breadcrumb`,
+      itemListElement: [
+        { name: "Home", url: siteConfig.url },
+        { name: "About", url: `${siteConfig.url}/#about` },
+        { name: "Skills", url: `${siteConfig.url}/#skills` },
+        { name: "Projects", url: `${siteConfig.url}/#projects` },
+        { name: "Client Projects", url: `${siteConfig.url}/#clients` },
+        { name: "Experience", url: `${siteConfig.url}/#experience` },
+        { name: "Contact", url: `${siteConfig.url}/#contact` },
+      ].map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    },
   ],
 };
 
