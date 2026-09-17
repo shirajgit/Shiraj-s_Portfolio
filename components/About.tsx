@@ -72,29 +72,34 @@ export default function About() {
                 <span className="text-yellow-400 font-semibold">
                   Shiraj Mujawar
                 </span>
-                , a <span className="font-semibold">Full-Stack Developer</span>{" "}
-                focused on building{" "}
-                <span className="text-gray-100">
-                  real-world, production-ready products
-                </span>
-                .
-              </p>
-
-              <p className="mt-4 text-gray-300 leading-relaxed">
-                I’ve worked on scalable web applications using{" "}
-                <span className="text-gray-100">
-                  React, Next.js, Node, and MongoDB
+                , a{" "}
+                <span className="font-semibold">
+                  Full-Stack Engineer &amp; Product Builder
                 </span>{" "}
-                — building clean UI, secure APIs, and performance-driven systems.
+                focused on turning ideas into{" "}
+                <span className="text-gray-100">real, usable products</span>. I
+                work across frontend, backend, APIs, databases, integrations,
+                deployment, and UI/UX.
               </p>
 
               <p className="mt-4 text-gray-300 leading-relaxed">
-                I also bring experience in{" "}
-                <span className="text-yellow-300 font-semibold">
-                  Embedded Systems & IoT
+                I’ve worked on{" "}
+                <span className="text-gray-100">
+                  production systems, client projects, e-commerce experiences,
+                  business automation
                 </span>
-                , which helps me think beyond just code — focusing on reliability,
-                performance, and real-world impact.
+                , and my own products. I also have a background in{" "}
+                <span className="text-yellow-300 font-semibold">
+                  Electronics &amp; IoT
+                </span>
+                , which gives me an additional hardware + software perspective.
+              </p>
+
+              <p className="mt-4 text-gray-300 leading-relaxed">
+                I enjoy building things end-to-end — from understanding the
+                requirement and designing the experience to writing the code,
+                integrating services, deploying the product, and improving it
+                based on real-world feedback.
               </p>
             </div>
 
@@ -122,10 +127,11 @@ export default function About() {
               {[
                 "MERN Stack",
                 "Next.js",
-                "DevOps",
+                "Shopify",
+                "APIs & Integrations",
+                "Automation",
+                "UI/UX",
                 "IoT",
-                "REST APIs",
-                "Auth Systems",
               ].map((b) => (
                 <motion.span
                   key={b}
@@ -154,10 +160,10 @@ export default function About() {
               <ul className="space-y-5">
                 {[
                   { icon: <FaUserGraduate />, text: "Diploma (2026)" },
-                  { icon: <FaLaptopCode />, text: "Full-Stack Developer" },
-                  { icon: <FaMobileAlt />, text: "App Development" },
-                  { icon: <FaBuilding />, text: "Startup Projects" },
-                  { icon: <FaHandshake />, text: "Freelance Work" },
+                  { icon: <FaLaptopCode />, text: "Full-Stack Engineer" },
+                  { icon: <FaBuilding />, text: "Founder — Aishi Technologies" },
+                  { icon: <FaMobileAlt />, text: "Product Development" },
+                  { icon: <FaHandshake />, text: "Shopify • APIs • Automation" },
                   { icon: <FaReact />, text: "React • Next • Node" },
                   { icon: <FaBrain />, text: "IoT & Embedded" },
                   { icon: <FaMapMarkerAlt />, text: "India" },

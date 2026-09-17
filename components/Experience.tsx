@@ -3,24 +3,58 @@
 import { motion } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
 
-const experiences = [
+type ExperienceItem = {
+  role: string;
+  company: string;
+  location?: string;
+  duration: string;
+  highlight?: boolean;
+  links?: { label: string; href: string }[];
+  points: string[];
+};
+
+const experiences: ExperienceItem[] = [
+  {
+    role: "Full-Stack Engineer",
+    company: "Legit Farms | Guaranteed Goodness",
+    location: "Bengaluru, Karnataka",
+    duration: "Jul 2026 – Present",
+    highlight: true,
+    links: [
+      { label: "Website", href: "https://legitfarms.com/" },
+      { label: "Shop", href: "https://shop.legitfarms.com/" },
+    ],
+    points: [
+      "Building and maintaining production web applications for a real farm-to-consumer business.",
+      "Built and customized the Shopify storefront end-to-end.",
+      "Integrated business workflows and third-party services, including Exotel IVR and payment systems.",
+      "Designed and implemented modern UI/UX from real business requirements.",
+      "Contributed to the digital experience for farm-tour operations.",
+      "Worked across development, integrations, deployment, troubleshooting, and ongoing improvements alongside cross-functional teams.",
+    ],
+  },
   {
     role: "Founder",
     company: "Aishi Technologies",
     duration: "2025 – Present",
-    highlight: true,
+    links: [{ label: "Website", href: "https://aishitech.online/" }],
     points: [
-      "Founded a product-focused digital company delivering scalable web solutions.",
-      "Built and shipped business websites and internal tools for real clients.",
-      "Led full lifecycle: design → development → deployment → client delivery.",
-      "Focused on clean UI/UX, performance optimization, and conversion.",
-      "Handled client communication and pricing strategy.",
+      "Founded a product-focused studio building digital products and solutions — not just websites.",
+      "Shipped business web apps and internal tools for real clients end-to-end.",
+      "Led the full lifecycle: design → development → deployment → delivery.",
+      "Focused on clean UI/UX, performance, and real business impact.",
+      "Handled client communication and delivery.",
     ],
   },
   {
     role: "Full-Stack Developer",
-    company: "Vizionexl tech, Bengaluru",
+    company: "Vizionexl Tech",
+    location: "Vijayapura, Karnataka",
     duration: "6 Months Internship",
+    links: [
+      { label: "Company", href: "https://vizionexltechnologies.in/" },
+      { label: "My Work", href: "https://vizionexl.vercel.app/" },
+    ],
     points: [
       "Developed full-stack apps using MERN stack.",
       "Built secure REST APIs with auth & RBAC.",
@@ -33,6 +67,13 @@ const experiences = [
     role: "Founding Engineer",
     company: "Dtrue",
     duration: "2025",
+    links: [
+      { label: "Website", href: "https://dtrue.vercel.app" },
+      {
+        label: "Android App",
+        href: "https://play.google.com/store/apps/details?id=com.shahnoor.dtrue&hl=en_IN",
+      },
+    ],
     points: [
       "Built core frontend & backend architecture.",
       "Designed scalable APIs and auth systems.",
@@ -51,17 +92,6 @@ const experiences = [
       "Handled full development lifecycle.",
       "Implemented auth systems.",
       "Managed client delivery.",
-    ],
-  },
-  {
-    role: "Hardware Designer Intern",
-    company: "Sadom, Bengaluru",
-    duration: "3 Months Internship",
-    points: [
-      "Built IoT prototypes using Arduino & ESP32.",
-      "Integrated sensors & automation systems.",
-      "Optimized power & reliability.",
-      "Managed firmware versioning.",
     ],
   },
 ];
@@ -143,6 +173,9 @@ export default function Experience() {
 
                 <p className="text-yellow-400 mt-1 text-sm">
                   {exp.company}
+                  {exp.location && (
+                    <span className="text-gray-500"> · {exp.location}</span>
+                  )}
                 </p>
 
                 {/* POINTS */}
@@ -154,6 +187,24 @@ export default function Experience() {
                     </li>
                   ))}
                 </ul>
+
+                {/* LINKS */}
+                {exp.links && exp.links.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {exp.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs px-3 py-1.5 rounded-full border border-white/10
+                        bg-white/[0.03] text-gray-300 hover:border-yellow-400/40 hover:text-yellow-300 transition"
+                      >
+                        {l.label} ↗
+                      </a>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             </motion.div>
           ))}

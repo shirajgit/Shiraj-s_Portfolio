@@ -1,6 +1,17 @@
 // src/data/projects.js
 export const projects = [
-    {
+  {
+    title: "Legit Farms — Production E-commerce & Digital Platform",
+    description:
+      "Production digital platform for a farm-to-consumer business, combining customer-facing web experiences, Shopify commerce, business integrations, payment workflows, and farm-tour functionality.",
+    tech: ["Shopify", "React/Next.js", "APIs", "Exotel", "Payments", "UI/UX"],
+    live: "https://legitfarms.com/",
+    shop: "https://shop.legitfarms.com/",
+    img: "/legitfarms.svg",
+    tag: "Featured · Production",
+    featured: true,
+  },
+  {
     title: "Dture",
     description:
       "A responsive landing page with modern UI, smooth layout, and optimized performance for desktop and mobile devices.",

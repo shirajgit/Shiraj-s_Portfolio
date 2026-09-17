@@ -66,11 +66,11 @@ export default function OpengraphImage() {
               flexWrap: "wrap",
             }}
           >
-            <span style={{ color: "#ffffff" }}>Building real&nbsp;</span>
+            <span style={{ color: "#ffffff" }}>Building &amp; shipping real&nbsp;</span>
             <span style={{ color: "#facc15" }}>products.</span>
           </div>
           <div style={{ fontSize: "34px", color: "#cbd5e1", maxWidth: "900px" }}>
-            {`${siteConfig.role} · MERN · Next.js · React Native · IoT`}
+            {`${siteConfig.role} · MERN · Next.js · Shopify · APIs · IoT`}
           </div>
         </div>
 

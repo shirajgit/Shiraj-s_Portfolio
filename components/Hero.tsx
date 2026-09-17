@@ -154,7 +154,7 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-8 text-sm uppercase tracking-[0.3em] text-gray-400"
           >
-            Full-Stack Developer
+            Full-Stack Engineer · Product Builder
           </motion.p>
 
           {/* HUGE headline, stacked */}
@@ -185,9 +185,19 @@ export default function Hero() {
           </motion.h1>
 
           {/* Tagline */}
-          <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-gray-400 max-w-md mx-auto lg:mx-0">
-            <span className="text-yellow-400 font-semibold">Building real products</span>{" "}
-            — not just projects. MERN, Next.js, App Dev & IoT.
+          <motion.p variants={fadeUp} className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0">
+            <span className="text-yellow-400 font-semibold">Building and shipping real products.</span>{" "}
+            With <span className="text-gray-100 font-semibold">2+ years of experience in IT</span>,
+            I build production-ready web applications, e-commerce experiences,
+            business automations, and digital products — from idea to deployment.
+          </motion.p>
+
+          {/* Supporting tech line */}
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 text-sm md:text-base font-medium text-gray-400 max-w-xl mx-auto lg:mx-0"
+          >
+            MERN · Next.js · Shopify · APIs · Automation · IoT
           </motion.p>
 
           {/* CTAs */}
@@ -204,7 +214,7 @@ export default function Hero() {
                 rounded-2xl font-semibold shadow-[0_0_30px_rgba(250,204,21,0.25)]
                 hover:bg-yellow-300 hover:shadow-[0_0_45px_rgba(250,204,21,0.4)] transition-shadow"
               >
-                View Projects
+                View My Work
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </motion.a>
             </Magnetic>
@@ -229,8 +239,8 @@ export default function Hero() {
             className="mt-12 flex gap-10 justify-center lg:justify-start"
           >
             {[
-              { n: "10+", l: "Projects shipped" },
-              { n: "5+", l: "Happy clients" },
+              { n: "30+", l: "Projects shipped" },
+              { n: "15+", l: "Happy clients" },
               { n: "2+", l: "Years building" },
             ].map((s) => (
               <div key={s.l} className="text-center lg:text-left">

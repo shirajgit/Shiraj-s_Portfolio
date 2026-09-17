@@ -7,7 +7,7 @@ import {
   FaPhoneAlt,
   FaLinkedin,
   FaGithub,
-  FaInstagram,
+  FaGlobe,
 } from "react-icons/fa";
 
 const container = {
@@ -23,7 +23,7 @@ const item = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.5, ease: "easeOut" as const },
   },
 };
 
@@ -63,10 +63,10 @@ export default function Contact() {
       external: true,
     },
     {
-      label: "Instagram",
-      sub: "@mr_shiraj_mujawar786",
-      href: "https://instagram.com/mr_shiraj_mujawar786",
-      icon: <FaInstagram />,
+      label: "Aishi Technologies",
+      sub: "aishitech.online",
+      href: "https://aishitech.online/",
+      icon: <FaGlobe />,
       external: true,
     },
   ];
@@ -100,9 +100,14 @@ export default function Contact() {
             </span>
           </h2>
 
-          <p className="mt-5 text-gray-400 max-w-xl mx-auto">
-            Got an idea, project, or business? Let’s turn it into a clean,
-            scalable product 🚀
+          <p className="mt-3 text-gray-300 font-medium">
+            Shiraj Mujawar — Full-Stack Engineer &amp; Product Builder
+          </p>
+
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+            Available for full-stack &amp; product development, web applications,
+            Shopify, automation/integrations, and freelance projects. Let’s build
+            and ship something real. 🚀
           </p>
         </motion.div>
 
@@ -116,7 +121,7 @@ export default function Contact() {
           {links.map((l) => (
             <motion.a
               key={l.label}
-              variants={{item}}
+              variants={item}
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}

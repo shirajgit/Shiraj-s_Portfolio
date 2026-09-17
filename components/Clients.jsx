@@ -107,17 +107,6 @@ export default function Clients({ clients }) {
                 ))}
               </ul>
 
-              {/* BOTTOM CTA */}
-              <div className="mt-8 flex items-center justify-between text-sm">
-                <span className="text-gray-400 group-hover:text-yellow-300 transition">
-                  View details
-                </span>
-
-                <span className="text-yellow-400 group-hover:translate-x-1 transition">
-                  →
-                </span>
-              </div>
-
               {/* HOVER BORDER GLOW */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition pointer-events-none">
                 <div className="absolute inset-0 rounded-3xl ring-1 ring-yellow-400/30" />

@@ -37,13 +37,23 @@ export default function Company({ company }) {
           className="text-center mb-16"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
-            About Company
+            {company.role ? `${company.role} — My Company` : "About Company"}
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
             <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
               {company.name}
             </span>
           </h2>
+          {company.website && (
+            <a
+              href={company.website}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-block text-sm text-gray-400 hover:text-yellow-300 transition"
+            >
+              {company.website.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗
+            </a>
+          )}
         </motion.div>
 
         <motion.div

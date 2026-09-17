@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Legit Farms production platform">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07120b"/>
+      <stop offset="0.55" stop-color="#0a1a0f"/>
+      <stop offset="1" stop-color="#050807"/>
+    </linearGradient>
+    <radialGradient id="glowG" cx="28%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowY" cx="82%" cy="78%" r="55%">
+      <stop offset="0" stop-color="#facc15" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#facc15" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#facc15"/>
+      <stop offset="1" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#glowG)"/>
+  <rect width="1200" height="800" fill="url(#glowY)"/>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 200H1200 M0 400H1200 M0 600H1200 M200 0V800 M400 0V800 M600 0V800 M800 0V800 M1000 0V800"/>
+  </g>
+
+  <!-- leaf mark -->
+  <g transform="translate(150 300)">
+    <circle cx="60" cy="60" r="86" fill="#0f2417" stroke="#22c55e" stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M60 108c-2-40 14-70 52-84-6 42-22 68-52 84z" fill="#22c55e" opacity="0.9"/>
+    <path d="M60 108c2-40-14-70-52-84 6 42 22 68 52 84z" fill="#16a34a" opacity="0.85"/>
+    <path d="M60 108c0-40 0-70 0-90" stroke="#86efac" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text x="150" y="470" font-family="Geist, Arial, sans-serif" font-size="30" letter-spacing="8" fill="#9ca3af">PRODUCTION WORK</text>
+  <text x="148" y="560" font-family="Geist, Arial, sans-serif" font-size="82" font-weight="800" fill="#f9fafb">Legit Farms</text>
+  <text x="150" y="612" font-family="Geist, Arial, sans-serif" font-size="30" fill="#86efac">Farm-to-consumer digital platform</text>
+
+  <g transform="translate(150 660)" font-family="Geist, Arial, sans-serif" font-size="24" fill="#e5e7eb">
+    <rect x="0" y="-30" width="140" height="44" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="24" y="0">Shopify</text>
+    <rect x="160" y="-30" width="180" height="44" rx="22" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="184" y="0">Next.js / React</text>
+    <rect x="360" y="-30" width="230" height="44" rx="22" fill="url(#gold)" fill-opacity="0.9"/>
+    <text x="384" y="0" fill="#111">APIs · Payments</text>
+  </g>
+</svg>

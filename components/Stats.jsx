@@ -1,31 +1,8 @@
 // src/components/Stats.jsx
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { TiltCard } from "./motion-kit";
-
-/* 🔢 Counter that only runs when scrolled into view, with spring easing */
-function Counter({ value, suffix = "+" }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-
-  const motionVal = useMotionValue(0);
-  const spring = useSpring(motionVal, { stiffness: 60, damping: 18 });
-
-  useEffect(() => {
-    if (inView) motionVal.set(parseInt(value) || 0);
-  }, [inView, value, motionVal]);
-
-  useEffect(() => {
-    const unsub = spring.on("change", (v) => {
-      if (ref.current) ref.current.textContent = Math.floor(v) + suffix;
-    });
-    return () => unsub();
-  }, [spring, suffix]);
-
-  return <span ref={ref}>0{suffix}</span>;
-}
 
 export default function Stats({ stats }) {
   return (
@@ -43,21 +20,23 @@ export default function Stats({ stats }) {
           className="text-center mb-14"
         >
           <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
-            Achievements
+            What I bring
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
             <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              My
-            </span>{" "}
-            Stats
+              Highlights
+            </span>
           </h2>
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+            I don’t just build projects — I build and ship real products.
+          </p>
         </motion.div>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
-              key={s.label}
+              key={s.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
@@ -78,11 +57,11 @@ export default function Stats({ stats }) {
 
                 {/* content lifted off the card in 3D space */}
                 <div className="relative z-10 [transform:translateZ(40px)]">
-                  <p className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent tabular-nums">
-                    <Counter value={s.value} />
+                  <p className="text-xl md:text-2xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                    {s.title}
                   </p>
-                  <p className="text-gray-400 mt-2 group-hover:text-yellow-200 transition">
-                    {s.label}
+                  <p className="text-gray-400 text-sm mt-2 group-hover:text-yellow-200 transition">
+                    {s.desc}
                   </p>
                 </div>
 

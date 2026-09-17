@@ -71,7 +71,11 @@ export default function Projects() {
               key={project.title ?? index}
               variants={card}
               whileHover={{ y: -10 }}
-              className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl"
+              className={`group relative rounded-3xl overflow-hidden border bg-white/[0.04] backdrop-blur-xl shadow-2xl ${
+                project.featured
+                  ? "md:col-span-2 border-yellow-400/30 ring-1 ring-yellow-400/20"
+                  : "border-white/10"
+              }`}
             >
               {/* IMAGE */}
               <div className="relative overflow-hidden h-72 md:h-96">
@@ -154,6 +158,19 @@ export default function Projects() {
                     </a>
                   )}
 
+                  {project.shop && (
+                    <a
+                      href={project.shop}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-xl
+                      border border-white/10 bg-white/[0.03]
+                      hover:border-yellow-400/40 hover:text-yellow-300 transition"
+                    >
+                      Shop <FaArrowUpRightFromSquare />
+                    </a>
+                  )}
+
                   {project.caseStudy && (
                     <a
                       href={project.caseStudy}
@@ -178,8 +195,20 @@ export default function Projects() {
         {/* CTA */}
         <div className="mt-20 text-center">
           <p className="text-gray-400 text-sm">
-            🚀 Have an idea? Let’s turn it into a product.
+            These are just a few highlights — plenty more live on GitHub.
           </p>
+
+          <a
+            href="https://github.com/shirajgit?tab=repositories"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-2xl
+            border border-white/15 bg-white/[0.03] text-gray-200
+            hover:border-yellow-400/40 hover:text-yellow-300 backdrop-blur-md transition"
+          >
+            <FaGithub /> View more projects on GitHub
+            <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>

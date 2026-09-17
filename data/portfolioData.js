@@ -2,6 +2,8 @@
 // src/data/portfolioData.js
 export const COMPANY = {
   name: "Aishi Technologies",
+  website: "https://aishitech.online/",
+  role: "Founder",
   tagline: "We don’t build projects. We build products.",
   points: [
     "Scalable architecture",
@@ -17,14 +19,31 @@ export const COMPANY = {
   ],
 };
 
+// Qualitative highlights — factual, no fabricated numbers.
 export const STATS = [
-  { label: "Client Projects", value: "5+" },
-  { label: "Internship Experience", value: "6 Months" },
-  { label: "Tech Stack", value: "15" },
-  { label: "CGPA", value: "10" },
+  { title: "Production Experience", desc: "Shipping real systems used by an operating business." },
+  { title: "Full-Stack Development", desc: "Frontend, backend, APIs, databases & deployment." },
+  { title: "Product Building", desc: "From idea and UI/UX to launch and iteration." },
+  { title: "Web + IoT", desc: "Software depth with a hardware & embedded perspective." },
 ];
 
 export const CLIENTS = [
+  {
+    name: "ZyraFlow",
+    type: "Digital Solutions Platform",
+    desc: "A modern, high-performance digital solutions platform helping businesses streamline operations, automate workflows, and scale with custom-built technology.",
+    link: "https://zyraflow.in",
+    stack: ["Next.js", "React", "CSS", "next/font", "Vercel"],
+    highlights: ["Workflow automation", "Performance-focused", "Custom-built tech"],
+  },
+  {
+    name: "VizionexL",
+    type: "IT Training Platform",
+    desc: "A modern web platform connecting learners with industry-level IT training, career opportunities, and professional growth resources — focused on skill development, job readiness, and a seamless user experience.",
+    link: "https://vizionexl.vercel.app",
+    stack: ["Next.js", "Tailwind", "MERN", "UI/UX"],
+    highlights: ["Skill development", "Job readiness", "Seamless UX"],
+  },
   {
     name: "Akeel Lights",
     type: "Business Website",

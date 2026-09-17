@@ -90,11 +90,6 @@ export default function Services({ services }) {
                 </p>
               </div>
 
-              {/* Bottom subtle CTA */}
-              <div className="mt-6 text-sm text-gray-400 group-hover:text-yellow-300 transition">
-                Learn more →
-              </div>
-
               {/* Border Glow */}
               <div className="absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-yellow-400/20 transition" />
             </motion.div>

@@ -8,24 +8,29 @@ export const siteConfig = {
   //    e.g. "https://shiraj-mujawar.vercel.app"
   url: "https://shiraj-portfolio.vercel.app",
 
-  title: "Shiraj Mujawar — Full-Stack Developer & Product Builder",
+  title: "Shiraj Mujawar — Full-Stack Engineer & Product Builder",
   shortTitle: "Shiraj Mujawar",
   description:
-    "Shiraj Mujawar is a full-stack developer building scalable web & mobile products with MERN, Next.js, React Native and IoT. Founder of Aishi Technologies.",
+    "Shiraj Mujawar is a Full-Stack Engineer and Product Builder with 2+ years of experience in IT, building and shipping production-ready web applications, digital products, Shopify experiences, business automations, and IoT solutions.",
 
-  role: "Full-Stack Developer",
+  role: "Full-Stack Engineer & Product Builder",
   company: "Aishi Technologies",
   locale: "en_US",
 
   keywords: [
     "Shiraj Mujawar",
+    "Full Stack Engineer",
     "Full Stack Developer",
+    "Product Builder",
+    "2+ Years Experience",
+    "Experienced Web Developer",
     "MERN Developer",
     "Next.js Developer",
     "React Developer",
     "Node.js Developer",
-    "React Native Developer",
-    "App Developer",
+    "Shopify Developer",
+    "API Integration",
+    "Automation",
     "IoT Developer",
     "Web Developer India",
     "Aishi Technologies",

@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-// @ts-ignore: Next.js global CSS import without local type declarations
 import "./globals.css";
 import { siteConfig } from "./site.config";
 
@@ -106,11 +105,14 @@ const jsonLd = {
       sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
       knowsAbout: [
         "Full-Stack Development",
+        "Product Development",
         "MERN Stack",
         "Next.js",
         "React",
         "Node.js",
-        "React Native",
+        "Shopify",
+        "API Integrations",
+        "Automation",
         "IoT",
       ],
     },
@@ -145,7 +147,6 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
